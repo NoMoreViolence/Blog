@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --text: #222;
+  --title: #222;
+  --bg: #F5F5F5;
+  --code-bg: #232936;
+  --link: #d23669;
+  --inlinecode-bg: rgba(255, 229, 100, 0.2);
+  --inlinecode-text: #1a1a1a;
+  --charcoal-grey: #36454F;
+}
+@property --dynamic-color-1 {
+  syntax: "<color>";
+  initial-value: #222;
+  inherits: false;
+}
+@property --dynamic-color-2 {
+  syntax: "<color>";
+  initial-value: #222;
+  inherits: false;
+}
+@media (prefers-reduced-motion) {
+  * {
+    transition: none !important;
+    transform: none !important;
+  }
+}
