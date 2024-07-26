@@ -3,7 +3,7 @@ import { Post } from "@/app/blog/page";
 import { Feed, FeedOptions } from "feed";
 
 export function generateFeed(posts: Post[], metadata: Metadata) {
-  const site_url = "https://nomoreviolence.io/";
+  const site_url = "https://nomoreviolence.me/";
 
   const feedOptions: FeedOptions = {
     copyright: "All rights reserved 2024, Jihoon LEE",
