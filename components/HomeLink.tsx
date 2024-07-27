@@ -1,31 +1,17 @@
-"use client";
-
-import clsx from "clsx";
-import { usePathname } from "next/navigation";
 import React, { CSSProperties } from "react";
 import Link from "./Link";
 
 export default function HomeLink() {
-  const pathname = usePathname();
-  const isActive = pathname === "/";
-
   return (
     <Link
       href="/"
-      className={clsx(
-        "inline-block text-2xl font-black",
-        isActive ? "" : "hover:scale-[1.02]"
-      )}
+      className="inline-block text-2xl font-black hover:scale-[1.02]"
     >
       <span
         style={
           {
-            "--dynamic-color-1": isActive
-              ? "var(--text)"
-              : "var(--charcoal-grey)",
-            "--dynamic-color-2": isActive
-              ? "var(--text)"
-              : "var(--charcoal-grey)",
+            "--dynamic-color-1": "var(--charcoal-grey)",
+            "--dynamic-color-2": "var(--charcoal-grey)",
             backgroundImage:
               "linear-gradient(45deg, var(--dynamic-color-1), var(--dynamic-color-2))",
             backgroundClip: "text",

@@ -18,7 +18,7 @@ export default async function PostPage({
 }: {
   params: { slug: string };
 }) {
-  const filename = "./public/" + params.slug + "/index.md";
+  const filename = "./public/" + params.slug + "/index.mdx";
   const file = await readFile(filename, "utf8");
   let postComponents = {};
   try {
@@ -94,7 +94,7 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }) {
-  const file = await readFile("./public/" + params.slug + "/index.md", "utf8");
+  const file = await readFile("./public/" + params.slug + "/index.mdx", "utf8");
   let { data } = matter(file);
   return {
     title: data.title + " — Jihoon Lee",

@@ -33,16 +33,16 @@ export default function RootLayout({
         <body
           className={clsx(
             pretendard.className,
-            "mx-auto max-w-2xl bg-[--bg] px-5 py-12 text-[--text]"
+            "mx-auto max-w-2xl px-5 py-12 text-[--text] bg-[--bg]"
           )}
         >
-          <header className="mb-14 flex flex-row place-content-between">
+          <header className="flex flex-row place-content-between">
             <HomeLink />
           </header>
 
           <ErrorBoundary errorComponent={ErrorFallback}>
             <Suspense>
-              <main>{children}</main>
+              <main className="mt-14">{children}</main>
             </Suspense>
           </ErrorBoundary>
 
