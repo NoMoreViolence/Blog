@@ -38,10 +38,8 @@ export default async function PostPage({
 
   return (
     <article>
-      <h1 className="text-[40px] font-black leading-[44px] text-charcoal-grey">
-        {data.title}
-      </h1>
-      <p className="mt-2 text-[13px] text-charcoal-grey">
+      <h1 className="text-4xl font-black text-charcoal-grey">{data.title}</h1>
+      <p className="mt-2 text-md text-charcoal-grey">
         {new Date(data.date).toLocaleDateString("en", {
           day: "numeric",
           month: "long",

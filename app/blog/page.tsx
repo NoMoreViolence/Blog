@@ -3,18 +3,18 @@ import { readdir, readFile } from "fs/promises";
 import matter from "gray-matter";
 import trim from "lodash-es/trim";
 
-export type Post = {
+export interface Post {
   date: Date;
   spoiler: string;
   slug: string;
   title: string;
   tags: string[];
-};
+}
 
 export function refineTags(tags: string): string[] {
   return tags
     .split(",")
-    .map((tag) => trim(tag))
+    .map(trim)
     .filter((tag) => tag.length > 0);
 }
 
@@ -45,6 +45,7 @@ export async function getPosts(): Promise<Post[]> {
 
 export default async function Home() {
   const posts = await getPosts();
+
   return (
     <div className="relative -top-[10px] flex flex-col gap-y-4">
       <PostList posts={posts} />
